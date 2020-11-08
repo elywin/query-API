@@ -13,7 +13,7 @@ let posts = new postSchema({
 // create a model
 // post - name of the collection that contain the document
 
-const model = mongoose.model("post",postSchema);
+const model = mongoose.model("post",posts);
 
 //export the model
 module.exports = model;

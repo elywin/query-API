@@ -4,8 +4,8 @@ const Post = require('../schemas/postmodel'); //imported post model
 module.exports.create_post = async (req, res) => {
    
     let newPost = new Post({
-      title: req.body.subject,
-      content: req.body.question,
+      subject: req.body.subject,
+      question: req.body.question,
 
     });
 
