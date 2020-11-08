@@ -12,10 +12,16 @@ module.exports.create_post = async (req, res) => {
 //save post to database
     await newPost.save(()=>{
         try {
-            res.status(200).json(newPost);
+            res.status(200).json({newPost:newPost});
         } catch (error) {
             res.status(500).json({failed:"failed to create post!"});
             console.log(error);
         }
     });
 }
+
+//get all posts
+module.exports.get_posts = async (req, res) => {
+    const posts = await Post.find();
+    res.json({ posts: posts });
+  };
