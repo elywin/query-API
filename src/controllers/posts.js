@@ -25,3 +25,18 @@ module.exports.get_posts = async (req, res) => {
     const posts = await Post.find();
     res.json({ posts: posts });
   };
+
+  //delete a post
+  module.exports.delete_post = async (req, res) => {
+    try {
+      await Post.deleteOne({
+        _id: req.params.id,
+      });
+      res.status(204).send();
+    } catch {
+      res.status(404);
+      res.json({
+        error: "Post doesn't exist!",
+      });
+    }
+  };

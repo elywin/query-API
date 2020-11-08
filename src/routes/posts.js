@@ -8,4 +8,7 @@ router.post('/questions',Posts.create_post);
 //route to get all posts
 router.get('/questions',Posts.get_posts);
 
+//route to delete a post
+router.post('/questions/:id',Posts.delete_post);
+
 module.exports = router;
