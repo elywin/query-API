@@ -9,6 +9,7 @@ module.exports.create_post = async (req, res) => {
 
     });
 
+//save post to database
     await newPost.save(()=>{
         try {
             res.status(200).json(newPost);
