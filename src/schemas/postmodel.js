@@ -7,7 +7,16 @@ const postSchema = mongoose.Schema;
 //defining a schema
 let posts = new postSchema({
     subject:String,
-    question:String
+    question:String,
+
+  answer: [
+    {
+      id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Answer",
+      },
+    },
+  ]
 });
 
 // create a model
