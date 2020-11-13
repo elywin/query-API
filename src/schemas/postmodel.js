@@ -9,6 +9,7 @@ let posts = new postSchema({
     subject:String,
     question:String,
 
+    //answer to a question
   answer: [
     {
       id: {
