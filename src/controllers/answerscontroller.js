@@ -36,3 +36,25 @@ module.exports.post_ans = async (req, res) => {
         });
     });
   };
+
+//gets answers
+  module.exports.get_ans = async (req, res) => {
+    try {
+      const answer = await ans.find(
+        {
+          user: req.params.id,
+        },
+        "answer"
+      );
+      res.json({
+        answer: answer,
+      });
+    } catch (error) {
+    
+      res
+        .json({
+          message: "No Answers found!!",
+        })
+        .status(404);
+    }
+  };
